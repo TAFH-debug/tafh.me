@@ -1,15 +1,17 @@
 "use client";
+import Chip from "@/components/chip";
 import EduCard from "@/components/edu-card";
 import { Icons } from "@/components/icons";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
-import { ShineBorder } from "@/components/magicui/shine-border";
+import ProjectCard from "@/components/project-card";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const data = {
-  about: "Full-stack web developer with a passion in the game development. Started coding at the age of 13. During my high school years participated in hackathons and got into nFactorial Incubator where I built my first SaaS project.",
+  about: "Full-stack web developer with a passion in cybersecurity. Active participant of hackathons & CTF competitions. \
+  I like building desktop applications on Tauri. Also I solve algorithmic problems on Codeforces in my free time.",
   education: [
     {
       img: "/nfactorial.jpg",
@@ -40,15 +42,49 @@ const data = {
   ],
   skills: [
     "Python",
-    "Node.js",
     "C++",
     "FastAPI",
     "Next.js",
+    "Svelte.js",
     "Rust",
+    "Tauri",
     "Java",
     "MongoDB",
     "PostgreSQL",
     "Docker"
+  ],
+  projects: [
+    {
+      img: "/crypt.ico",
+      title: "Crypt",
+      content: "Password manager with Aes256Gcm encryption for your passwords.",
+      skills: ["Tauri", "Rust", "Svelte.js"],
+      href: "https://github.com/TAFH-debug/crypt"
+    },
+    {
+      img: "/pygame_tools.png",
+      title: "Pygame Tools",
+      content: "Pygame library wrapper with some advanced game engine abstractions.",
+      skills: ["Python"],
+      href: "https://github.com/TAFH-debug/pygame_tools_tafh"
+    }
+  ],
+  hackathons: [
+    {
+      name: "HackKz hackathon",
+      description: "We made learning platform with cources & AI mentor feedback system. Got 1st place.",
+      time: "July 2024"
+    },
+    {
+      name: "nFactorial LLM Cup 2024",
+      description: "Made AI Game Designer - AI that helps people to generate game assets, sprites and game plot with given idea. Got 4th place.",
+      time: "Aug 2024"
+    },
+    {
+      name: "PetHack",
+      description: "It was my first real hackathon. Learned how to work in a team and got first glimpse of Django.",
+      time: "April 2024"
+    },
   ]
 }
 
@@ -73,14 +109,6 @@ function Section({ children, id, duration, title, className }: { children: React
   )
 }
 
-function Chip({ content }: { content: string }) {
-  return (
-    <div className="rounded-lg bg-primary px-3 py-1 text-primary-foreground m-2">
-      {content}
-    </div>
-  )
-}
-
 const BLUR_FADE_DURATION = 0.4;
 
 export default function Page() {
@@ -97,7 +125,6 @@ export default function Page() {
         width={1600}
       />
       <div className="flex flex-col items-center md:w-3/5 max-w-screen rounded-lg md:my-20 md:p-10 bg-accent relative overflow-x-hidden">
-      <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} borderWidth={2} duration={5}/>
       <div className="max-w-screen m-2 p-5">
       <BlurFade duration={BLUR_FADE_DURATION}>
       <section id="title" className="flex items-center">
@@ -110,7 +137,7 @@ export default function Page() {
           {data.about}
         </p>
       </Section>
-      <Section id="education" duration={BLUR_FADE_DURATION * 3} title="Education 📖">
+      <Section id="education" duration={BLUR_FADE_DURATION * 2} title="Education 📖">
         {
           data.education.map((val, idx) =>
             <EduCard {...val} key={idx} /> 
@@ -118,12 +145,18 @@ export default function Page() {
         }
       </Section>
 
-      <Section id="skills" duration={BLUR_FADE_DURATION * 3.5} title="Skills ⚒️">
+      <Section id="skills" duration={BLUR_FADE_DURATION * 3} title="Skills ⚒️">
         <div className="flex flex-wrap">
           {
             data.skills.map((val, idx) => <Chip content={val} key={idx} /> )
           }
         </div>
+      </Section>
+
+      <Section id="projects" duration={BLUR_FADE_DURATION * 3} title="Projects 🗂️">
+        {
+          data.projects.map((val, idx) => <ProjectCard key={idx} {...val} />)
+        }
       </Section>
 
       <Section id="socials" duration={BLUR_FADE_DURATION * 4} title="Contact me 📞">
