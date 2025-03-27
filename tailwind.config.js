@@ -1,4 +1,7 @@
-module.exports = {
+import {heroui} from "@heroui/react";
+
+/** @type {import('tailwindcss').Config} */
+const config = {
   purge: [],
   theme: {
     extend: {},
@@ -12,3 +15,5 @@ module.exports = {
   darkMode: "class",
   plugins: [heroui()]
 }
+
+export default config;
