@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {data} from "@/lib/config";
 
-function Logo({ children, href, }: { children: React.ReactNode, href: string }) {
+function Logo({ children, href }: { children: React.ReactNode, href: string }) {
   return (
     <motion.div whileHover={{ scale: 1.2 }} className="mx-3">
       <Link href={href}>
@@ -16,7 +16,7 @@ function Logo({ children, href, }: { children: React.ReactNode, href: string }) 
   )
 }
 
-function Section({ children, id, index, title, className }: { children: React.ReactNode, id: string, duration: number, title: string, className?: string }) {
+function Section({ children, id, index, title, className }: { children: React.ReactNode, id: string, index: number, title: string, className?: string }) {
   return (
     <motion.div
         transition={{
