@@ -1,9 +1,22 @@
 import {Icons} from "@/components/icons";
 
 export const data = {
-    about: "Full-stack web developer with a passion in cyber security. Hackathons & Capture The Flag competitions enjoyer. \
-    4+ years of coding experience. Solve problems on Codeforces & Make Tauri applications as a hobby.",
+    about: "Full-stack web developer with interest in ML & Gamedev. IOAI 25' Silver medalist. Love being silly.",
+    experience: [
+        {
+            img: "/nfactorial.jpg",
+            title: "nFactorial School",
+            content: "Software Developer",
+            time: "Jan 2026 - Present"
+        }
+    ],
     education: [
+        {
+            img: "/pusan.jpg",
+            title: "Pusan National University",
+            content: "Undergraduate studies.",
+            time: "Sept 2025 - July 2029"
+        },
         {
             img: "/nfactorial.jpg",
             title: "nFactorial Incubator",
@@ -13,7 +26,7 @@ export const data = {
         {
             img: "/nspm.jpg",
             title: "National School of Physics and Maths",
-            content: "Top 4 of the school, olympiad participant.",
+            content: "Physics, Informatics, AI.",
             time: "Sept 2020 - June 2025"
         }
     ],
@@ -60,16 +73,27 @@ export const data = {
             href: "https://github.com/TAFH-debug/pygame_tools_tafh"
         }
     ],
-    hackathons: [
+    achievements: [
+        {
+            img: "/ioai.png",
+            name: "IOAI 2025 Silver Medal",
+            description: "Silver medal at the International Olympiad in Artificial Intelligence.",
+            time: "Aug 2025"
+        },
+        {
+            name: "nFactorial AI Cup 2025 4th place",
+            description: "Deploy AI - AI agent that automatically deploy your app to VPS/VDS. Got 4th place.",
+            time: "May 2025"
+        },
         {
             name: "HackKz hackathon",
             description: "We made learning platform with cources & AI mentor feedback system. Got 1st place.",
             time: "July 2024"
         },
         {
-            name: "nFactorial LLM Cup 2024",
+            name: "nFactorial LLM Cup 2024 4th place",
             description: "Made AI Game Designer - AI that helps people to generate game assets, sprites and game plot with given idea. Got 4th place.",
-            time: "Aug 2024"
+            time: "May 2024"
         },
         {
             name: "PetHack",
